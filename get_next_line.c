@@ -29,7 +29,6 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = NULL;
 	flag = 0;
-	printf("buffer: %c", buffer[0]);
 	while (!flag && (buffer[0] || (read(fd, buffer, BUFFER_SIZE) > 0)))
 	{
 		line = ft_strjoin(line, buffer);

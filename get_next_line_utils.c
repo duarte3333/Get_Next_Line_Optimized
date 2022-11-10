@@ -13,6 +13,10 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 
+//Se a string for NULL retorna 0
+//Se a string for vazia retorna 0
+//Se a string nao tiver \n retorna o seu size
+//Se a string tive \n retorna o seu size + 1
 static size_t	ft_strlen(const char *str)
 {
 	int	i;
@@ -29,6 +33,10 @@ static size_t	ft_strlen(const char *str)
 
 //Esta funcao recebe duas strings e faz a concatenação de ambas
 //ou seja, junta-as
+//Enquanto a line existir e a line for diferente de '\0' -> juntar
+//Enquanto o buffer for diferente de '\0' -> juntar
+//O buffer vai exitir sempre
+//Se chegarmos a uma \n damos break pois acabou a line
 char	*ft_strjoin(char *s1, char *s2)
 {
 	int		size_concat;

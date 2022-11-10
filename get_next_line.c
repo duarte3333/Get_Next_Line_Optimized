@@ -12,12 +12,11 @@
 
 #include "get_next_line.h"
 
-
-//Caso o buffer seja menor que 0 ou o fd nao seja valido retorna-se NULL
-//Esta funcao ira ler a primeira linha de um ficheiro caso seja chamada, 
-//e caso seja chamada de novo ira ler a linha a seguir do ficheiro, etc...
-//Caso ja nao haja mais linhas no ficheiro para ler e se 
-//continue a chamar a funcao ela ira retorna NULL 
+//Se o buffer tiver vazio le, caso contrario usa o que tem
+//A flag serve para saber quando acabar a limpeza do buffer, 
+//isto e, quando o buffer chegar ao \n
+//Esta funcao le uma linha de um ficheiro e caso seja chamada 
+//novamente, le a linha a seguir da que ja leu.
 char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1];
@@ -30,6 +29,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = NULL;
 	flag = 0;
+	printf("buffer: %c", buffer[0]);
 	while (!flag && (buffer[0] || (read(fd, buffer, BUFFER_SIZE) > 0)))
 	{
 		line = ft_strjoin(line, buffer);

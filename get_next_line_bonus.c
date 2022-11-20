@@ -1,5 +1,16 @@
-#include "get_next_line_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsa-mora <dsa-mora@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/19 16:42:15 by dsa-mora          #+#    #+#             */
+/*   Updated: 2022/11/19 16:42:19 by dsa-mora         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "get_next_line_bonus.h"
 
 //Caso o buffer seja menor que 0 ou o fd nao seja valido retorna-se NULL
 //Esta funcao ira ler a primeira linha de um ficheiro caso seja chamada, 
